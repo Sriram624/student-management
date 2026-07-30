@@ -189,7 +189,23 @@ Read the description carefully:
 - Example usage
 - Time & Space complexity
 
-### Step 2: Create a Branch
+### Step 2: Sync with Latest Changes (Important!)
+
+⚠️ **Before starting each issue**, make sure you have the latest code from main repo:
+
+```bash
+# Add upstream remote (one time only)
+git remote add upstream https://github.com/dharanigowthamsampath/student-management.git
+
+# Update your local main branch
+git fetch upstream
+git checkout main
+git merge upstream/main
+```
+
+This ensures you have the **latest function stubs and tests** for new issues!
+
+## Step 3: Create a Branch
 
 Create a feature branch (never work on main!):
 
@@ -638,6 +654,51 @@ This shouldn't happen! But if it does:
 1. Double-check you ran `make test`
 2. Make sure you're on correct branch: `git branch`
 3. Push again: `git push origin issue/X-function-name`
+
+### "GraphQL: The baseRefName is invalid" (When Creating PR)
+
+```
+pull request create failed: GraphQL: The baseRefName is invalid
+```
+
+**Problem:** Wrong syntax when creating PR via CLI
+
+**Solution:** Use the GitHub web UI instead:
+1. Go to your fork: `https://github.com/YOUR-USERNAME/student-management`
+2. Click yellow banner: **"Compare & Pull Request"**
+3. Fill in title and description
+4. Click **"Create Pull Request"**
+
+Or if using CLI, make sure you're in the repository:
+```bash
+cd /path/to/your/fork
+git push origin issue/X-function-name
+gh pr create  # (No extra flags needed)
+```
+
+### "GitHub Actions not showing test results immediately"
+
+⚠️ **Warning:** GitHub Actions tests may take 1-2 minutes to start running after PR is created.
+
+**What to expect:**
+1. You create PR
+2. Status shows "pending" or "running"
+3. **Wait 1-2 minutes** - tests will start
+4. Green ✅ if all pass, Red ❌ if any fail
+
+**Don't worry if you don't see results immediately!** Keep the page open and refresh after a minute.
+
+### "Issue doesn't show student name who closed it"
+
+⚠️ **Note:** GitHub automatically closes issues when you use "Closes #X" in PR description.
+
+**What happens:**
+1. Your PR merges
+2. GitHub sees "Closes #X"
+3. Issue closes automatically
+4. Click on issue to see: "Closed via PR #Y by @your-username"
+
+You don't need to do anything extra - GitHub handles it!
 
 ---
 
