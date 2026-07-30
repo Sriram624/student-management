@@ -1,0 +1,25 @@
+name: Auto Test on PR
+
+on:
+  pull_request:
+    branches: [ main ]
+  push:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Install dependencies (macOS)
+      run: |
+        brew install gcc make
+
+    - name: Run tests
+      run: make test
+
+    - name: Check test results
+      run: |
+        make test || exit 1
