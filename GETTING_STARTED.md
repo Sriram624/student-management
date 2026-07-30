@@ -463,12 +463,19 @@ GitHub will suggest creating a Pull Request. Click the link or follow Step 4.
 
 ### Step 4: Create a Pull Request
 
+**⚠️ Important:** The PR must be created FROM your fork TO the main repo!
+
 **Option A: Web UI (Easiest)**
 
 1. Go to your fork: `https://github.com/YOUR-USERNAME/student-management`
-2. Click yellow banner: **"Compare & Pull Request"**
-3. Add title: `Issue #X: Function description`
-4. Add description:
+2. You should see a yellow/blue banner saying: **"Create a pull request"**
+   - It shows: **your-fork:issue/X-... → dharanigowthamsampath:main**
+3. Click: **"Compare & Pull Request"**
+4. Verify the PR is targeting the correct repos:
+   - **Base:** dharanigowthamsampath/student-management (main)
+   - **Head:** YOUR-USERNAME/student-management (your fork)
+5. Add title: `Issue #X: Function description`
+6. Add description:
    ```
    ## Summary
    Implemented add_student() function to add students to database
