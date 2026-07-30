@@ -528,8 +528,25 @@ Your PR is ready! Maintainer will merge it.
 
 Once all tests pass and maintainer merges:
 - ✅ Your code is in main branch
+- ✅ **GitHub automatically closes the issue** (because your PR says "Closes #X")
 - ✅ Move to next issue
 - ✅ Repeat process
+
+**Important:** Notice the PR description includes:
+```
+Closes #1
+```
+
+This is a **GitHub magic keyword**. When the PR is merged:
+1. ✅ Your code goes to main
+2. ✅ Issue #1 automatically closes (no admin needed!)
+3. ✅ Issue marked as solved
+
+**For your issues, always include this in PR description:**
+```
+Closes #X
+```
+(Replace X with your issue number)
 
 ---
 
