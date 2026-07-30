@@ -7,6 +7,16 @@
 // TODO: Find students whose names start with letter
 //
 int search_students_starting_with(char letter, Student *results, int max_results) {
-    // TODO: Implement this function
-    return 0;
+    int count = 0;
+
+    letter = tolower((unsigned char)letter);
+
+    for (int i = 0; i < total_students && count < max_results; i++) {
+        if (tolower((unsigned char)students[i].name[0]) == letter) {
+            results[count] = students[i];
+            count++;
+        }
+    }
+
+    return count;
 }
