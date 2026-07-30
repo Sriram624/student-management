@@ -2,6 +2,21 @@
 
 A beginner-friendly C project for learning software development practices with a focus on collaborative development using GitHub.
 
+**🎯 120 independent functions | 60 students | 2 issues per student**
+
+## Getting Started (Choose Your Path)
+
+### 👨‍💻 For New Students
+Start here - complete these guides in order:
+1. **[SETUP.md](SETUP.md)** - Install required tools and verify setup
+2. **[WORKFLOW.md](WORKFLOW.md)** - Step-by-step guide to solve an issue
+3. **[STUDENT_SUBMISSION.md](STUDENT_SUBMISSION.md)** - How to fork, commit, and submit PRs
+4. **[TESTING.md](TESTING.md)** - Understand how tests work
+
+### 👨‍🏫 For Instructors
+- View all 120 functions: **[FUNCTIONS_LIST.md](FUNCTIONS_LIST.md)**
+- Set up GitHub workflows and auto-testing
+
 ## Project Structure
 
 ```
@@ -31,65 +46,24 @@ student_management/
    ```
    If tests compile and run, you're ready!
 
-## Workflow for Solving Issues
+## How to Submit Your Work
 
-### Step 1: Create a branch for your issue
-```bash
-# Replace X with your issue number
-git checkout -b issue/X-function-name
-```
+### Quick Start (5 Steps)
 
-### Step 2: Read the TODO in src/student.c
-- Open `src/student.c`
-- Find your issue number (e.g., Issue #1)
-- Read the requirements carefully
-- Look at the test cases to understand what's expected
+1. **Fork** the repo (create your own copy)
+2. **Clone** your fork: `git clone https://github.com/YOUR-USERNAME/student-management.git`
+3. **Create branch**: `git checkout -b issue/X-function-name`
+4. **Implement & test**: Edit code, run `make test`
+5. **Submit PR**: Push to your fork, create Pull Request
 
-### Step 3: Implement the function
-- Write only the code inside your function
-- Do NOT modify:
-  - `student.h` (struct, constants)
-  - Test cases
-  - Function signatures
-- Follow the complexity requirements (Time & Space)
+### Detailed Guide
 
-### Step 4: Test locally
-```bash
-make test
-```
-You should see:
-```
-✓ PASS: test case name
-✓ PASS: another test
-Test Results:
-  Passed: 3
-  Failed: 0
-```
-
-### Step 5: Commit your changes
-```bash
-git add src/student.c
-git commit -m "Issue #X: Implement function_name"
-```
-
-### Step 6: Push to GitHub
-```bash
-git push origin issue/X-function-name
-```
-
-### Step 7: Create a Pull Request (PR)
-- Go to GitHub
-- Click "Compare & Pull Request"
-- Add a description of what you implemented
-- Submit
-
-### Step 8: Wait for auto-tests
-GitHub will automatically run tests on your PR:
-- ✅ If all tests pass → PR is ready to merge
-- ❌ If tests fail → Fix the code, commit again, push again
-
-### Step 9: Merge PR
-Once tests pass, a maintainer will merge your PR.
+See **[STUDENT_SUBMISSION.md](STUDENT_SUBMISSION.md)** for:
+- ✅ How to fork the repository
+- ✅ How to commit and push properly
+- ✅ How to create a Pull Request
+- ✅ How to handle test failures
+- ✅ Troubleshooting common issues
 
 ## Building & Testing
 
