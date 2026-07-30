@@ -2,65 +2,73 @@
 
 Issues **#1** (`add_student`) and **#2** (`delete_student_by_id`) are already implemented and are not assigned. Remaining 118 issues (#3-#120) are assigned 2 per student for the first 58 students; the last 2 students get 1 issue each.
 
-| Student | Issue A                                     | Issue B                                    |
-| ------- | ------------------------------------------- | ------------------------------------------ |
-| #01     | 003 - Retrieve student by ID                | 004 - Retrieve student by email            |
-| #02     | 005 - Retrieve student by name              | 006 - Get list of all students             |
-| #03     | 007 - Count total students                  | 008 - Check if student exists              |
-| #04     | 009 - Modify student name                   | 010 - Modify student email                 |
-| #05     | 011 - Modify student phone                  | 012 - Modify student grade                 |
-| #06     | 013 - Modify student department             | 014 - Modify student year                  |
-| #07     | 015 - Display single student info           | 016 - Display all students                 |
-| #08     | 017 - Delete all records                    | 018 - Check if no students exist           |
-| #09     | 019 - Retrieve student by phone             | 020 - Create copy of student               |
-| #10     | 021 - Validate ID format (positive integer) | 022 - Validate email format                |
-| #11     | 023 - Validate phone format                 | 024 - Validate grade (0-100 range)         |
-| #12     | 025 - Validate name (non-empty, length)     | 026 - Validate year (1-4)                  |
-| #13     | 027 - Validate department string            | 028 - Validate age (18-60)                 |
-| #14     | 029 - Check if email already exists         | 030 - Check if ID already exists           |
-| #15     | 031 - Check if phone already exists         | 032 - Validate name has only letters       |
-| #16     | 033 - Check email has @ symbol              | 034 - Check phone has only digits          |
-| #17     | 035 - Check grade in valid range            | 036 - Find single student by ID            |
-| #18     | 037 - Find single student by email          | 038 - Find student by name                 |
-| #19     | 039 - Find all in department                | 040 - Find all in same year                |
-| #20     | 041 - Find in grade range                   | 042 - Find with grade > threshold          |
-| #21     | 043 - Find with grade < threshold           | 044 - Group by dept                        |
-| #22     | 045 - Get first match                       | 046 - Get last match                       |
-| #23     | 047 - Count matching records                | 048 - Find by dept AND year                |
-| #24     | 049 - Name starts with letter               | 050 - Binary search on ID (assumes sorted) |
-| #25     | 051 - Sort ascending by ID                  | 052 - Sort ascending by name               |
-| #26     | 053 - Sort ascending by grade               | 054 - Sort ascending by email              |
-| #27     | 055 - Sort ascending by dept                | 056 - Sort ascending by year               |
-| #28     | 057 - Sort descending by grade              | 058 - Sort descending by name              |
-| #29     | 059 - Multi-key sort                        | 060 - Check if sorted by ID                |
-| #30     | 061 - Get middle grade value                | 062 - Get most frequent grade              |
-| #31     | 063 - Mean of all grades                    | 064 - Highest grade                        |
-| #32     | 065 - Lowest grade                          | 066 - Max - Min                            |
-| #33     | 067 - Rank by grade (1 = highest)           | 068 - Percentile rank                      |
-| #34     | 069 - Count with grade >= 60                | 070 - Count with grade < 60                |
-| #35     | 071 - % of students passed                  | 072 - Ratio of pass:fail                   |
-| #36     | 073 - Average grade per dept                | 074 - Count per dept                       |
-| #37     | 075 - Name of highest grade                 | 076 - Name of lowest grade                 |
-| #38     | 077 - Std dev of grades                     | 078 - Count of top 10% students            |
-| #39     | 079 - Min/max/avg combined                  | 080 - Count in grade range                 |
-| #40     | 081 - Convert string to uppercase           | 082 - Convert string to lowercase          |
-| #41     | 083 - Remove leading/trailing spaces        | 084 - Reverse all characters               |
-| #42     | 085 - Count characters                      | 086 - Case-sensitive comparison            |
-| #43     | 087 - Case-insensitive comparison           | 088 - Extract portion of string            |
-| #44     | 089 - Count vowels (a,e,i,o,u)              | 090 - Count consonants                     |
-| #45     | 091 - Check if string reads same backwards  | 092 - Join two strings                     |
-| #46     | 093 - Find index of char in string          | 094 - Count specific char                  |
-| #47     | 095 - Check if substring exists             | 096 - Get all with grade > X               |
-| #48     | 097 - Get all with grade < X                | 098 - Get only active status               |
-| #49     | 099 - Get only inactive status              | 100 - Get scholarship holders              |
-| #50     | 101 - Get non-scholarship                   | 102 - Name starts with letter              |
-| #51     | 103 - Name has specific length              | 104 - Get specific dept                    |
-| #52     | 105 - Enrollment date filter                | 106 - Get unique departments               |
-| #53     | 107 - Group by exact grade                  | 108 - Max grade in dept                    |
-| #54     | 109 - Min grade in dept                     | 110 - Compare any two records              |
-| #55     | 111 - Find duplicates                       | 112 - Multi-filter                         |
-| #56     | 113 - Closest to mean                       | 114 - Dept comparison                      |
-| #57     | 115 - Get top N by grade                    | 116 - Get bottom N by grade                |
-| #58     | 117 - Grades far from average               | 118 - Grade frequency breakdown            |
-| #59     | 119 - By year analysis                      | —                                          |
-| #60     | 120 - By semester stats                     | —                                          |
+## ⚠️ IMPORTANT: GitHub Issue Numbers ≠ Function Issue Numbers
+
+The GitHub issue numbers are **offset by 195** from the function issue numbers:
+
+- Function Issue #3 → GitHub Issue #198 (edit `src/issue_003.c`, PR closes GitHub #198)
+- Function Issue #4 → GitHub Issue #199 (edit `src/issue_004.c`, PR closes GitHub #199)
+- Formula: **GitHub Issue # = Function Issue # + 195**
+
+| S.No | Reg No     | Issue A (File)  | GitHub # A | Issue B (File)  | GitHub # B |
+| ---- | ---------- | --------------- | ---------- | --------------- | ---------- |
+| 01   | 2024068175 | 003 (issue_003) | #198       | 004 (issue_004) | #199       |
+| 02   | 2024000371 | 005 (issue_005) | #200       | 006 (issue_006) | #201       |
+| 03   | 2024003872 | 007 (issue_007) | #202       | 008 (issue_008) | #203       |
+| 04   | 2024008947 | 009 (issue_009) | #204       | 010 (issue_010) | #205       |
+| 05   | 2024105106 | 011 (issue_011) | #206       | 012 (issue_012) | #207       |
+| 06   | 2024107717 | 013 (issue_013) | #208       | 014 (issue_014) | #209       |
+| 07   | 2024007826 | 015 (issue_015) | #210       | 016 (issue_016) | #211       |
+| 08   | 2024008437 | 017 (issue_017) | #212       | 018 (issue_018) | #213       |
+| 09   | 2024061493 | 019 (issue_019) | #214       | 020 (issue_020) | #215       |
+| 10   | 2024031787 | 021 (issue_021) | #216       | 022 (issue_022) | #217       |
+| 11   | 2024009942 | 023 (issue_023) | #218       | 024 (issue_024) | #219       |
+| 12   | 2024176461 | 025 (issue_025) | #220       | 026 (issue_026) | #221       |
+| 13   | 2024165826 | 027 (issue_027) | #222       | 028 (issue_028) | #223       |
+| 14   | 2024002213 | 029 (issue_029) | #224       | 030 (issue_030) | #225       |
+| 15   | 2024002861 | 031 (issue_031) | #226       | 032 (issue_032) | #227       |
+| 16   | 2024025105 | 033 (issue_033) | #228       | 034 (issue_034) | #229       |
+| 17   | 2024089663 | 035 (issue_035) | #230       | 036 (issue_036) | #231       |
+| 18   | 2024041712 | 037 (issue_037) | #232       | 038 (issue_038) | #233       |
+| 19   | 2024170860 | 039 (issue_039) | #234       | 040 (issue_040) | #235       |
+| 20   | 2024032811 | 041 (issue_041) | #236       | 042 (issue_042) | #237       |
+| 21   | 2024044926 | 043 (issue_043) | #238       | 044 (issue_044) | #239       |
+| 22   | 2024091408 | 045 (issue_045) | #240       | 046 (issue_046) | #241       |
+| 23   | 2024006700 | 047 (issue_047) | #242       | 048 (issue_048) | #243       |
+| 24   | 2024034718 | 049 (issue_049) | #244       | 050 (issue_050) | #245       |
+| 25   | 2024038555 | 051 (issue_051) | #246       | 052 (issue_052) | #247       |
+| 26   | 2024060756 | 053 (issue_053) | #248       | 054 (issue_054) | #249       |
+| 27   | 2024092423 | 055 (issue_055) | #250       | 056 (issue_056) | #251       |
+| 28   | 2024011359 | 057 (issue_057) | #252       | 058 (issue_058) | #253       |
+| 29   | 2024030981 | 059 (issue_059) | #254       | 060 (issue_060) | #255       |
+| 30   | 2024063964 | 061 (issue_061) | #256       | 062 (issue_062) | #257       |
+| 31   | 2024006898 | 063 (issue_063) | #258       | 064 (issue_064) | #259       |
+| 32   | 2024042752 | 065 (issue_065) | #260       | 066 (issue_066) | #261       |
+| 33   | 2024063468 | 067 (issue_067) | #262       | 068 (issue_068) | #263       |
+| 34   | 2024204338 | 069 (issue_069) | #264       | 070 (issue_070) | #265       |
+| 35   | 2024067258 | 071 (issue_071) | #266       | 072 (issue_072) | #267       |
+| 36   | 2024070583 | 073 (issue_073) | #268       | 074 (issue_074) | #269       |
+| 37   | 2024039025 | 075 (issue_075) | #270       | 076 (issue_076) | #271       |
+| 38   | 2024038597 | 077 (issue_077) | #272       | 078 (issue_078) | #273       |
+| 39   | 2024021878 | 079 (issue_079) | #274       | 080 (issue_080) | #275       |
+| 40   | 2024007563 | 081 (issue_081) | #276       | 082 (issue_082) | #277       |
+| 41   | 2024021816 | 083 (issue_083) | #278       | 084 (issue_084) | #279       |
+| 42   | 2024027020 | 085 (issue_085) | #280       | 086 (issue_086) | #281       |
+| 43   | 2024034600 | 087 (issue_087) | #282       | 088 (issue_088) | #283       |
+| 44   | 2024017721 | 089 (issue_089) | #284       | 090 (issue_090) | #285       |
+| 45   | 2024005202 | 091 (issue_091) | #286       | 092 (issue_092) | #287       |
+| 46   | 2024006671 | 093 (issue_093) | #288       | 094 (issue_094) | #289       |
+| 47   | 2024012277 | 095 (issue_095) | #290       | 096 (issue_096) | #291       |
+| 48   | 2024163217 | 097 (issue_097) | #292       | 098 (issue_098) | #293       |
+| 49   | 2024199606 | 099 (issue_099) | #294       | 100 (issue_100) | #295       |
+| 50   | 2024085221 | 101 (issue_101) | #296       | 102 (issue_102) | #297       |
+| 51   | 2024093708 | 103 (issue_103) | #298       | 104 (issue_104) | #299       |
+| 52   | 2024094700 | 105 (issue_105) | #300       | 106 (issue_106) | #301       |
+| 53   | 2024015392 | 107 (issue_107) | #302       | 108 (issue_108) | #303       |
+| 54   | 2024076234 | 109 (issue_109) | #304       | 110 (issue_110) | #305       |
+| 55   | 2024039098 | 111 (issue_111) | #306       | 112 (issue_112) | #307       |
+| 56   | 2024088563 | 113 (issue_113) | #308       | 114 (issue_114) | #309       |
+| 57   | 2024008155 | 115 (issue_115) | #310       | 116 (issue_116) | #311       |
+| 58   | 2024009735 | 117 (issue_117) | #312       | 118 (issue_118) | #313       |
+| 59   | 2024172531 | 119 (issue_119) | #314       | —               | —          |
+| 60   | 2024007063 | 120 (issue_120) | #315       | —               | —          |

@@ -7,9 +7,10 @@ SRC_DIR = src
 TEST_DIR = test
 BUILD_DIR = build
 
-# Source files
-SOURCES = $(SRC_DIR)/student.c
-TEST_SOURCES = $(TEST_DIR)/test.c $(SRC_DIR)/student.c
+# Source files - all issue_*.c files plus globals
+ISSUE_SOURCES = $(wildcard $(SRC_DIR)/issue_*.c)
+SOURCES = $(SRC_DIR)/globals.c $(ISSUE_SOURCES)
+TEST_SOURCES = $(TEST_DIR)/test.c $(SRC_DIR)/globals.c $(ISSUE_SOURCES)
 
 # Output
 TEST_EXECUTABLE = $(BUILD_DIR)/test_runner
