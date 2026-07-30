@@ -35,4 +35,13 @@ extern int total_students;
 // Constraints: Only modify the students array, do not modify struct definition
 int add_student(Student s);
 
+// Issue #2: delete_student_by_id
+// Delete a student from database by ID
+// Input: Student ID
+// Output: Return 1 if success, 0 if student not found
+// Time Complexity: O(n)
+// Space Complexity: O(1)
+// Constraints: Shift remaining students to maintain order
+int delete_student_by_id(int id);
+
 #endif

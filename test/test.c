@@ -110,6 +110,62 @@ void test_add_student_full_database() {
 }
 
 // ========================================
+// Issue #2 Tests: delete_student_by_id
+// ========================================
+
+void test_delete_student_single() {
+    printf("\nTest: Delete single student\n");
+    setup();
+
+    // Add a student
+    Student s = {1, "John Doe", "john@mail.com", "9999999999", 85, "CS", 2};
+    add_student(s);
+    ASSERT_EQUAL(total_students, 1, "total_students should be 1 after adding");
+
+    // Delete the student
+    int result = delete_student_by_id(1);
+
+    ASSERT_EQUAL(result, 1, "delete_student_by_id should return 1 on success");
+    ASSERT_EQUAL(total_students, 0, "total_students should be 0 after deleting");
+}
+
+void test_delete_nonexistent_student() {
+    printf("\nTest: Delete non-existent student\n");
+    setup();
+
+    // Try to delete student that doesn't exist
+    int result = delete_student_by_id(999);
+
+    ASSERT_EQUAL(result, 0, "delete_student_by_id should return 0 if not found");
+    ASSERT_EQUAL(total_students, 0, "total_students should remain 0");
+}
+
+void test_delete_and_shift() {
+    printf("\nTest: Delete student and verify shift\n");
+    setup();
+
+    // Add 3 students
+    Student s1 = {1, "Alice", "alice@mail.com", "1111111111", 90, "CS", 1};
+    Student s2 = {2, "Bob", "bob@mail.com", "2222222222", 75, "IT", 2};
+    Student s3 = {3, "Charlie", "charlie@mail.com", "3333333333", 88, "ECE", 3};
+
+    add_student(s1);
+    add_student(s2);
+    add_student(s3);
+    ASSERT_EQUAL(total_students, 3, "total_students should be 3");
+
+    // Delete middle student (ID=2)
+    int result = delete_student_by_id(2);
+
+    ASSERT_EQUAL(result, 1, "delete_student_by_id should return 1");
+    ASSERT_EQUAL(total_students, 2, "total_students should be 2 after delete");
+
+    // Verify remaining students are shifted correctly
+    ASSERT_EQUAL(students[0].id, 1, "First student should be Alice (ID=1)");
+    ASSERT_EQUAL(students[1].id, 3, "Second student should be Charlie (ID=3)");
+}
+
+// ========================================
 // Main test execution
 // ========================================
 int main() {
@@ -120,6 +176,14 @@ int main() {
     test_add_student_single();
     test_add_student_multiple();
     test_add_student_full_database();
+
+    printf("\n========================================\n");
+    printf("Issue #2: delete_student_by_id Tests\n");
+    printf("========================================\n");
+
+    test_delete_student_single();
+    test_delete_nonexistent_student();
+    test_delete_and_shift();
 
     printf("\n========================================\n");
     printf("Test Results:\n");
