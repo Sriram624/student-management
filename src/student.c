@@ -24,14 +24,8 @@ int total_students = 0;
 // - Full database (100 students), add one more → should fail
 //
 int add_student(Student s) {
-    // Check if database is full
-    if (total_students >= MAX_STUDENTS) {
-        return 0;  // Database full, cannot add
-    }
+    // TODO: Implement this function
+    // Write your code here
 
-    // Add student to array
-    students[total_students] = s;
-    total_students++;
-
-    return 1;  // Success
+    return 0;  // Change this
 }
