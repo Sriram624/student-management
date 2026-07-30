@@ -57,8 +57,27 @@ int add_student(Student s) {
 // - Verify remaining students are intact
 //
 int delete_student_by_id(int id) {
-    // TODO: Implement this function
-    // Write your code here
+    // Find student by ID
+    int index = -1;
+    for (int i = 0; i < total_students; i++) {
+        if (students[i].id == id) {
+            index = i;
+            break;
+        }
+    }
 
-    return 0;  // Change this
+    // Student not found
+    if (index == -1) {
+        return 0;
+    }
+
+    // Shift remaining students down
+    for (int i = index; i < total_students - 1; i++) {
+        students[i] = students[i + 1];
+    }
+
+    // Decrement counter
+    total_students--;
+
+    return 1;  // Success
 }
