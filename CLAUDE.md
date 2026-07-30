@@ -22,7 +22,8 @@ This is an **educational C project** designed to teach 60 students professional 
 ```
 src/
   student.h       (Struct, constants, declarations - READ-ONLY)
-  student.c       (Function stubs - students implement here)
+  globals.c       (Shared students[] array + total_students - READ-ONLY)
+  issue_XXX.c     (One file per issue, e.g. issue_001.c - students implement here)
 test/
   test.c          (Pre-written test cases)
 .github/workflows/
@@ -30,6 +31,12 @@ test/
 GETTING_STARTED.md (Complete student guide - single file)
 FUNCTIONS_LIST.md  (All 120 functions table)
 ```
+
+**Note:** the original design used a single `src/student.c` for all stubs. It was split
+into one file per issue (`src/issue_XXX.c`, zero-padded to 3 digits) plus `src/globals.c`
+for the shared database, so 60 students editing 120 issues never collide on the same file.
+The `Makefile` picks up new issue files automatically via `$(wildcard src/issue_*.c)` — no
+Makefile changes needed when adding issues.
 
 ---
 
@@ -77,7 +84,7 @@ Fork → Clone → Sync → Branch → Code → Test (all pass) → Commit → P
 
 **Steps:**
 1. Pick next issue from FUNCTIONS_LIST.md
-2. Add stub to `src/student.c` following this pattern:
+2. Create `src/issue_XXX.c` (zero-padded issue number) following this pattern:
    ```c
    // ========================================
    // Issue #X: Implement function_name
@@ -173,7 +180,7 @@ Closes #X
 **When:** After adding new issues
 
 **Steps:**
-1. Add stub to `src/student.c`
+1. Add stub to `src/issue_XXX.c`
 2. Add tests to `test/test.c`
 3. Implement the function
 4. Run `make test` → all should pass
@@ -219,7 +226,7 @@ make rebuild     # Clean + build
 ### Git Workflow (As Admin)
 ```bash
 git checkout -b feature/new-issues     # Create feature branch
-git add src/student.c test/test.c      # Add changes
+git add src/issue_XXX.c test/test.c    # Add changes
 git commit -m "feat: Add Issues #X-#Y"
 git push origin main                   # Push to main
 
@@ -325,7 +332,8 @@ Or description
 | File | Purpose | Edit? |
 |------|---------|-------|
 | `src/student.h` | Struct, constants, declarations | ❌ Rarely |
-| `src/student.c` | Function stubs | ✅ Add stubs here |
+| `src/globals.c` | Shared database (`students[]`, `total_students`) | ❌ Rarely |
+| `src/issue_XXX.c` | Per-issue function stub | ✅ Add stubs here |
 | `test/test.c` | Test cases | ✅ Add tests here |
 | `GETTING_STARTED.md` | Student guide | ✅ Add error solutions |
 | `README.md` | Quick ref | ⚠️ If needed |
@@ -338,7 +346,7 @@ Or description
 ## Next Major Tasks
 
 1. **Create Issues #3-#120** (~6-8 hours)
-   - Add stubs to student.c
+   - Add stub to each issue_XXX.c
    - Add tests to test.c
    - Create GitHub Issues
 

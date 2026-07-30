@@ -129,13 +129,20 @@ You should see tests running (they'll fail - that's normal! No functions impleme
 ```
 student-management/
 ├── src/
-│   ├── student.h       (Struct & constants - DON'T MODIFY)
-│   └── student.c       (Function stubs - YOU IMPLEMENT HERE)
+│   ├── student.h        (Struct & constants - DON'T MODIFY)
+│   ├── globals.c        (Shared database - DON'T MODIFY)
+│   └── issue_XXX.c      (One file per issue - YOU IMPLEMENT HERE)
 ├── test/
 │   └── test.c          (Test cases - DON'T MODIFY)
 ├── Makefile            (Build instructions)
 └── main.c
 ```
+
+**Important:** each issue lives in its own file, `src/issue_XXX.c`, where `XXX` is your
+issue number zero-padded to 3 digits (e.g. Issue #3 → `src/issue_003.c`, Issue #47 →
+`src/issue_047.c`). You only ever touch **your own** `issue_XXX.c` file — this means your
+work never conflicts with another student's file. `src/globals.c` declares the shared
+`students` array and `total_students` counter; don't modify it.
 
 ### The Student Struct
 
@@ -226,13 +233,14 @@ git branch
 
 ### Step 3: Find Your Function
 
-Open `src/student.c` and search for your issue number:
+Open your issue's file: `src/issue_XXX.c` (zero-padded issue number, e.g. Issue #1 →
+`src/issue_001.c`):
 
 ```bash
 # macOS/Linux - open in editor
-vim src/student.c
+vim src/issue_001.c
 
-# OR use Ctrl+F in your IDE to search for "Issue #1"
+# OR just open src/issue_001.c directly in your IDE
 ```
 
 You'll see something like:
@@ -434,14 +442,14 @@ Test Results:
 Stage your work:
 
 ```bash
-git add src/student.c
+git add src/issue_XXX.c   # e.g. git add src/issue_001.c
 ```
 
 Verify you're committing the right file:
 
 ```bash
 git status
-# Should show src/student.c with green "M" (modified)
+# Should show src/issue_XXX.c with green "M" (modified)
 ```
 
 Commit with a clear message:
@@ -643,7 +651,7 @@ sudo apt-get install build-essential
 
 ```bash
 # Undo changes to file
-git checkout src/student.c
+git checkout src/issue_XXX.c   # e.g. git checkout src/issue_001.c
 
 # Try again
 ```
@@ -715,7 +723,7 @@ For each issue, follow this checklist:
 - [ ] **Work on Issue**
   - [ ] Read issue description
   - [ ] Created branch: `git checkout -b issue/X-...`
-  - [ ] Read function requirements in `src/student.c`
+  - [ ] Read function requirements in `src/issue_XXX.c`
   - [ ] Read test cases in `test/test.c`
   - [ ] Implemented function
   - [ ] Ran `make test` → All pass ✓
@@ -753,7 +761,7 @@ git checkout -b issue/X-function-name
 make test
 
 # Commit & push
-git add src/student.c
+git add src/issue_XXX.c
 git commit -m "Issue #X: Description"
 git push origin issue/X-function-name
 

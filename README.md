@@ -29,7 +29,7 @@ A Student Management System written in C where:
 
 1. **Pick an issue** assigned to you
 2. **Fork the repository** (create your own copy)
-3. **Implement the function** in `src/student.c`
+3. **Implement the function** in your issue's file: `src/issue_XXX.c`
 4. **Test locally** with `make test`
 5. **Submit a Pull Request**
 6. **Auto-tests run** on GitHub
@@ -39,7 +39,8 @@ A Student Management System written in C where:
 
 ```
 ├── src/student.h         (Struct & constants - DON'T MODIFY)
-├── src/student.c         (Where YOU write code)
+├── src/globals.c         (Shared database - DON'T MODIFY)
+├── src/issue_XXX.c       (One file per issue - Where YOU write code)
 ├── test/test.c           (Tests - DON'T MODIFY)
 ├── Makefile              (Build instructions)
 └── GETTING_STARTED.md    (Complete guide - READ THIS!)
@@ -61,7 +62,7 @@ git checkout -b issue/X-function-name
 make test
 
 # Submit your work
-git add src/student.c
+git add src/issue_XXX.c
 git commit -m "Issue #X: Description"
 git push origin issue/X-function-name
 # Then create PR on GitHub
